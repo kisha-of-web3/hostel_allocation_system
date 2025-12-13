@@ -1,0 +1,29 @@
+{% extends 'users/base.html' %}
+
+{% block title %}Apply for a Room{% endblock %}
+
+{% block content %}
+<div class="container">
+
+    <div class="dashboard-card">
+        <h3>Apply for a Room</h3>
+        <div class="auth-container">
+
+            <form method="post">
+                {% csrf_token %}
+    
+                <label for="hostel">Select Hostel:</label>
+                <select name="hostel_id" id="hostel" required>
+                    <option value="">-- Choose a hostel --</option>
+                    {% for hostel in hostels %}
+                    <option value="{{ hostel.id }}">{{ hostel.name }} - Available Rooms: {{ hostel.available_rooms }} </option>
+                    {% endfor %}
+                </select>
+    
+                <button type="submit">Apply</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

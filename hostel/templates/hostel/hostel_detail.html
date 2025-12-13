@@ -1,0 +1,35 @@
+{% extends 'users/base.html' %}
+{% block title %}{{ hostel.name }} Details{% endblock %}
+
+{% block content %}
+<h2>{{ hostel.name }}</h2>
+<p><strong>Location:</strong> {{ hostel.location }}</p>
+<p><strong>Capacity:</strong> {{ hostel.capacity }}</p>
+<p><strong>Description:</strong> {{ hostel.description }}</p>
+
+<h3>Rooms</h3>
+<table>
+    <tr>
+        <th>Room Number</th>
+        <th>Capacity</th>
+        <th>Occupied</th>
+        <th>Status</th>
+    </tr>
+    {% for room in hostel.rooms.all %}
+    <tr>
+        <td>{{ room.number }}</td>
+        <td>{{ room.capacity }}</td>
+        <td>{{ room.occupied }}</td>
+        <td>{{ room.is_active|yesno:"Active,Inactive" }}</td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="4">No rooms available.</td></tr>
+    {% endfor %}
+</table>
+
+{% if user.is_authenticated %}
+    <a href="{% url 'apply' hostel.id %}"><button>Apply to this Hostel</button></a>
+{% else %}
+    <p><a href="{% url 'login' %}">Login</a> to apply.</p>
+{% endif %}
+{% endblock %}

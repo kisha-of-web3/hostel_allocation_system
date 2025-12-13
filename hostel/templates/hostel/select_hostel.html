@@ -1,0 +1,20 @@
+{% extends 'users/base.html' %}
+
+{% block content %}
+<div class="auth-container">
+    <h2>Select a Hostel to Apply</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        <select name="hostel_id" class="form-control">
+            <option value="">-- Select a hostel --</option>
+            {% for hostel in hostels %}
+            <option value="{{ hostel.id }}">{{ hostel.name }}</option>
+            {% endfor %}
+        </select>
+    
+        <button type="submit" class="btn btn-primary mt-3">Next</button>
+    </form>
+</div>
+
+{% endblock %}

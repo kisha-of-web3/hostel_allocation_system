@@ -1,0 +1,21 @@
+{% extends 'users/base.html' %}
+
+{% block content %}
+
+<div class="dashboard-card">
+    <h2>Apply for {{ hostel.name }}</h2>
+    <p>Location: {{ hostel.location }}</p>
+    <p>Total Capacity: {{ hostel.capacity }}</p>
+    <p>Available Rooms: {{ hostel.available_rooms }}</p>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+    
+        <button type="submit" class="btn btn-success">Submit Application</button>
+    </form>
+</div>
+
+
+<a href="{% url 'select_hostel' %}">Back to hostel selection</a>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'users/base.html' %}
+{% block title %}Hostels{% endblock %}
+
+{% block content %}
+<h2>Hostels</h2>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Capacity</th>
+        <th>Description</th>
+    </tr>
+    {% for hostel in hostels %}
+    <tr>
+        <td>{{ hostel.name }}</td>
+        <td>{{ hostel.location }}</td>
+        <td>{{ hostel.capacity }}</td>
+        <td>{{ hostel.description }}</td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="4">No hostels found.</td></tr>
+    {% endfor %}
+</table>
+{% endblock %}

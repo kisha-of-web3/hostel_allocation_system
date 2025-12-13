@@ -1,0 +1,41 @@
+{% extends 'users/base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="container">
+
+  <!-- Welcome / Allocation Card -->
+  <div class="dashboard-card">
+    <h3>Welcome, {{ request.user.username }}</h3>
+    {% if allocation %}
+    <p>You are allocated to: {{ allocation.room }}</p>
+    {% else %}
+    <p>No allocation yet. <a href="{% url 'select_hostel' %}">Apply for a room</a></p>
+    {% endif %}
+  </div>
+
+  <!-- Recent Applications Card -->
+  <div class="dashboard-card">
+    <h3>Your Recent Applications</h3>
+    {% if applications %}
+    <ul>
+      {% for a in applications %}
+      <li>{{ a.preferred_hostel }} — {{ a.get_status_display }} ({{ a.created_at|date:"M j, Y" }})</li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p>No applications</p>
+    {% endif %}
+  </div>
+
+  <!-- Logout Card -->
+  <div class="dashboard-card">
+    <form method="post" action="{% url 'logout' %}">
+      {% csrf_token %}
+      <button type="submit">Logout</button>
+    </form>
+  </div>
+
+</div>
+{% endblock %}
