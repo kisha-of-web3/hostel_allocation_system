@@ -1,0 +1,450 @@
+/* ===== General ===== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Navigation ===== */
+nav {
+    background-color: #1e1f29;
+    padding: 15px 20px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: #00b4d8;
+}
+
+/* ===== Headings ===== */
+h2,
+h3 {
+    color: #1e1f29;
+    margin-bottom: 15px;
+}
+
+/* ===== Tables ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 12px 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+    background-color: #00b4d8;
+    color: #fff;
+    font-weight: 600;
+}
+
+tr:hover {
+    background-color: #f1faff;
+}
+
+/* ===== Forms ===== */
+form p {
+    margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #00b4d8;
+    outline: none;
+}
+
+button {
+    background-color: #00b4d8;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+button:hover {
+    background-color: #0077a3;
+    transform: scale(1.05);
+}
+
+/* ===== Links in forms ===== */
+p a {
+    color: #00b4d8;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    table {
+        font-size: 0.85rem;
+    }
+}
+
+/* ===== Auth Pages (Login & Signup) ===== */
+.auth-container {
+    width: 400px;
+    /* fixed width */
+    max-width: 90%;
+    /* responsive fallback */
+    margin: 60px auto;
+    padding: 30px 25px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.auth-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #1e1f29;
+    font-weight: 600;
+}
+
+.auth-container form p {
+    margin-bottom: 15px;
+}
+
+.auth-container input[type="text"],
+.auth-container input[type="password"],
+.auth-container input[type="email"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border 0.2s;
+    box-sizing: border-box;
+}
+
+.auth-container input:focus {
+    border-color: #00b4d8;
+    outline: none;
+}
+
+.auth-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #00b4d8;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.auth-container button:hover {
+    background-color: #0077a3;
+    transform: scale(1.05);
+}
+
+.auth-container p a {
+    color: #00b4d8;
+    text-decoration: none;
+}
+
+.auth-container p a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Vertical centering for large screens ===== */
+@media (min-height: 600px) {
+
+    body.login-page,
+    body.signup-page {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+}
+
+/* ===== Responsive tweaks ===== */
+@media (max-width: 480px) {
+    .auth-container {
+        padding: 20px 15px;
+    }
+}
+
+/* ===== Dashboard Cards ===== */
+.dashboard-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    transition: transform 0.1s;
+}
+
+.dashboard-card:hover {
+    transform: scale(1.02);
+}
+
+.dashboard-card h3 {
+    margin-bottom: 15px;
+    color: #1e1f29;
+}
+
+.dashboard-card p {
+    margin-bottom: 12px;
+}
+
+.dashboard-card a {
+    color: #00b4d8;
+    text-decoration: none;
+}
+
+.dashboard-card a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Recent Applications List Styling ===== */
+.dashboard-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dashboard-card ul li {
+    background: #f5f7fa;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.dashboard-card ul li:hover {
+    background: #e0f7ff;
+    transform: translateX(3px);
+}
+
+/* Logout button inside card */
+.dashboard-card form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #00b4d8;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.dashboard-card form button:hover {
+    background-color: #0077a3;
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .dashboard-card {
+        padding: 15px;
+    }
+   .dashboard-card ul li {
+        padding: 8px 12px;
+    }
+}
+
+
+/* ============================
+  University-style overrides
+  (Uses only existing classes you already have)
+   - paste this at the BOTTOM of your current CSS
+   - no new ids/classes introduced
+   ============================ */
+
+/* color tokens (kept local to avoid breaking other rules) */
+:root {
+    --uni-navy: #002147;
+    --uni-burgundy: #7A0019;
+    --uni-gold: #F4B400;
+    --uni-muted: #5C5C5C;
+}
+
+/* NAV override keeping your nav selector */
+nav {
+    background-color: var(--uni-navy);
+    /* university navy */
+    padding: 16px 22px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* keep your link rules but tune hover */
+nav a {
+    color: #fff;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: var(--uni-gold);
+}
+
+/* make .container headers feel institutional, using existing .container usage */
+.container h2,
+.container h3 {
+    color: var(--uni-navy);
+    font-family: "Merriweather", serif;
+    font-weight: 700;
+    margin-bottom: 18px;
+    padding-left: 10px;
+    border-left: 4px solid var(--uni-gold);
+}
+
+/* AUTH CONTAINER — reuse for any card-like form (login/signup) */
+.auth-container {
+    background: #ffffff;
+    /* keep card look */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    max-width: 520px;
+    /* same feel as before but consistent */
+    margin: 48px auto;
+}
+
+/* ensure form inputs inside auth-container match card style */
+.auth-container input,
+.auth-container select,
+.auth-container textarea {
+    background: #fafbff;
+    border: 1px solid #cfcfcf;
+    padding: 12px 14px;
+    border-radius: 8px;
+}
+
+/* DASHBOARD CARD — use the same look for all forms you want carded */
+.dashboard-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+    border-left: 6px solid var(--uni-navy);
+    /* subtle institutional accent */
+}
+
+/* If you used .container to wrap dashboard-card, make it centered */
+.container .dashboard-card {
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* FORM LAYOUT inside dashboard-card: label, input spacing */
+.dashboard-card label,
+.auth-container label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: var(--uni-navy);
+}
+
+.dashboard-card input,
+.dashboard-card select,
+.dashboard-card textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 14px;
+    border-radius: 8px;
+    border: 1px solid #d0d6e2;
+    background: #fbfcff;
+}
+
+/* Button style using your original button selector (keeps existing specificity) */
+button,
+.auth-container button,
+.dashboard-card form button {
+    background-color: var(--uni-burgundy) !important;
+    color: #fff !important;
+    border-radius: 8px;
+    padding: 10px 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* hover / focus */
+button:hover,
+.auth-container button:hover,
+.dashboard-card form button:hover {
+    transform: scale(1.02);
+    background-color: #610014 !important;
+}
+
+/* TABLES: keep your table rules but improve header style */
+th {
+    background-color: var(--uni-navy) !important;
+    color: #fff !important;
+    font-weight: 600;
+}
+
+/* small responsive tweak: keep the same container widths but ensure form cards scale */
+@media (max-width: 768px) {
+
+    .auth-container,
+    .dashboard-card {
+        padding: 18px;
+        margin: 24px;
+    }
+}
+
+
+/* input a button that let's users delete the hostel they applied for, then get a question askinng if they want to apply for another */
